@@ -2,9 +2,6 @@
 
 @section('content')
 
-
-@include('inc.card')
-
-
+@include('inc.products')
 
 @endsection

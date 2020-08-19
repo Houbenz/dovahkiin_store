@@ -27,13 +27,19 @@
                     </ol>
                     <div class="carousel-inner">
                       <div class="carousel-item active">
+                        <a href="#">
                       <img class="d-block w-100" src="{{url('/images/image-car-1.jpg')}}" alt="First slide">
+                        </a>
                       </div>
                       <div class="carousel-item">
+                        <a href="#">
                         <img class="d-block w-100" src="{{url('/images/image-car-2.jpg')}}" alt="Second slide">
+                        </a>
                       </div>
                       <div class="carousel-item">
-                        <img class="d-block w-100" src="{{url('/images/image-car-3.jpg')}}" alt="Third slide">
+                        <a href="#">
+                            <img class="d-block w-100" src="{{url('/images/image-car-3.jpg')}}" alt="Third slide">
+                        </a>
                       </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

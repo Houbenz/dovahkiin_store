@@ -11,20 +11,18 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('users','UserController@getUsers');
+
+Route::get('/',function(){
+
     return view('index');
 });
 
-Route::get('users','UserController@getUsers');
+Route::get('insta', function () {
 
-Route::get('products',function(){
-
-    $products=['azef','aze','blade','azef','aze','blade'];
-    return view('products')->with('products', $products);
+    return view('hello-insta');
 });
 
-Route::get('home',function(){
+Route::resource('products', 'ProductController');
 
-    $products=['azef','aze','blade','azef','aze','blade'];
-    return view('home')->with('products', $products);
-});
+Route::view('test','product_detail');
