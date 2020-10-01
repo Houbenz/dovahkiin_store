@@ -18,7 +18,7 @@
                 @foreach ($products as $product)
                     <div class="col-lg-4">
 
-                        @include('inc.card_element')
+                        @include('inc.products.card_element')
 
                     </div>
                 @endforeach
@@ -29,14 +29,14 @@
                     @if ($i % 3 == 0)
                         <div class="row mt-4">
 
-                        @include('inc.card_element')
+                        @include('inc.products.card_element')
 
                             @php
                             $num_cards++;
                             @endphp
 
                     @else
-                            @include('inc.card_element')
+                            @include('inc.products.card_element')
 
                     @php
                         $num_cards++;

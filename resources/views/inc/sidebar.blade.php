@@ -14,7 +14,7 @@
                 data-toggle="modal" data-target="#loginModal">
                     Login
                 </button>
-                @include('inc.modal_login')
+                @include('inc.auth.modal_login')
             </div>
 
             <div class="list-group list-group-flush">
@@ -23,7 +23,7 @@
                 data-toggle="modal" data-target="#registerModal">
                     Register
                 </button>
-                @include('inc.modal_register')
+                @include('inc.auth.modal_register')
             </div>
         @endguest
 
@@ -38,7 +38,7 @@
                 data-toggle="modal" data-target="#logoutModal">
                     Logout
                 </button>
-                @include('inc.modal_logout')
+                @include('inc.auth.modal_logout')
 
             </div>
         @endauth

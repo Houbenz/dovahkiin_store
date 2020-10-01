@@ -16,7 +16,7 @@ class ProductController extends Controller
     public function index()
     {
         $products=Product::paginate(9);
-        return view('inc.products',['products'=>$products]);
+        return view('inc.products.products',['products'=>$products]);
 
     }
 
@@ -49,7 +49,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view("inc.products.product_detail")->with('product',$product);
     }
 
     /**

@@ -8,7 +8,7 @@
             <h4 class="card-title">{{$product->name}}</h4>
             <p class="card-text">{{$product->description}}</p>
             <a href="#" class="btn btn-success mb-2">add to your cart</a><br/>
-            <a href="#" class="btn btn-warning">Details</a>
+        <a href="products/{{$product->id}}" class="btn btn-warning">Details</a>
         </div>
     </div>
     </div>
