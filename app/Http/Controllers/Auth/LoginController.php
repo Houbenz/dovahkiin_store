@@ -51,4 +51,9 @@ class LoginController extends Controller
             return redirect()->intended('/')->with('user',$user);
         }
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect()->intended('/');
+    }
 }

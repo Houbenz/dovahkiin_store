@@ -32,10 +32,8 @@ Route::view('vue','testvue');
 
 /***Login */
 
-Route::post('login',[LoginRegister::class,'authenticate']);
+Route::post('login',[LoginController::class,'authenticate']);
 
 Route::post('register',[RegisterController::class,'create']);
 
-
-//Route::post('login','LoginController@authenticate');
-//Route::post('register','RegisterController@create');
+Route::post('logout',[LoginController::class,'logout']);

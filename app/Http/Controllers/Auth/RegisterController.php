@@ -64,11 +64,11 @@ class RegisterController extends Controller
      */
     protected function create(Request $request)
     {
-        /*return User::create([
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);*/
+         User::create([
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
 
-        return $request;
+        return redirect()->intended('products');
     }
 }

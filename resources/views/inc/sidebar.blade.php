@@ -7,22 +7,41 @@
             <strong class="text-danger">store</strong></a>
         </div>
 
+        @guest
+            <div class="list-group list-group-flush">
 
-        <div class="list-group list-group-flush">
+                <button type="button" class="list-group-item list-group-item-action bg-dark text-white"
+                data-toggle="modal" data-target="#loginModal">
+                    Login
+                </button>
+                @include('inc.modal_login')
+            </div>
 
-            <button type="button" class="list-group-item list-group-item-action bg-dark text-white"
-             data-toggle="modal" data-target="#loginModal">
-                Login
-              </button>
-            @include('inc.modal_login')
-        </div>
+            <div class="list-group list-group-flush">
 
-        <div class="list-group list-group-flush">
+                <button type="button" class="list-group-item list-group-item-action bg-dark text-white"
+                data-toggle="modal" data-target="#registerModal">
+                    Register
+                </button>
+                @include('inc.modal_register')
+            </div>
+        @endguest
 
-            <button type="button" class="list-group-item list-group-item-action bg-dark text-white"
-             data-toggle="modal" data-target="#registerModal">
-                Register
-              </button>
-            @include('inc.modal_register')
-        </div>
+        @auth
+            <div class="list-group list-group-flush">
+
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Account</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">History</a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white">Settings</a>
+
+                <button type="button" class="list-group-item list-group-item-action bg-dark text-white"
+                data-toggle="modal" data-target="#logoutModal">
+                    Logout
+                </button>
+                @include('inc.modal_logout')
+
+            </div>
+        @endauth
+
+
     </div>

@@ -12,6 +12,6 @@ $factory->define(Product::class, function (Faker $faker) {
         'name' => $faker->name,
         'price' =>$faker->unique()->randomNumber($nbDigits = 8),
         'type' =>Str::random(10),
-        'description' => Str::random(100)
+        'description' => Str::random(10)
     ];
 });

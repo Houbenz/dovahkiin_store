@@ -34,11 +34,12 @@
                     <input type="password" name="password" class="form-control">
                 </div>
 
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success btn-block">Login</button>
+                  </div>
             </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success btn-block">Login</button>
-        </div>
+
       </div>
     </div>
   </div>
