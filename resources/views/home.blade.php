@@ -54,10 +54,6 @@
             </div>
 
          </div>
-
-         <div class="row">
-            @include('inc.card')
-         </div>
     </div>
 
 @endsection

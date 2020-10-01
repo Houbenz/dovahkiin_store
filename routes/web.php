@@ -11,18 +11,31 @@
 |
 */
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+
+
 Route::get('users','UserController@getUsers');
 
 Route::get('/',function(){
 
-    return view('index');
+    return view('home');
 });
 
-Route::get('insta', function () {
 
-    return view('hello-insta');
-});
-
+/*PRODUCTS*/
+Route::post('products/search','ProductController@search')->name('products.search');
 Route::resource('products', 'ProductController');
-
 Route::view('test','product_detail');
+Route::view('vue','testvue');
+
+
+/***Login */
+
+Route::post('login',[LoginRegister::class,'authenticate']);
+
+Route::post('register',[RegisterController::class,'create']);
+
+
+//Route::post('login','LoginController@authenticate');
+//Route::post('register','RegisterController@create');

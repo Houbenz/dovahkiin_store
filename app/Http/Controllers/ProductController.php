@@ -86,4 +86,13 @@ class ProductController extends Controller
     {
         //
     }
+
+
+    public function search(Request $request)
+    {
+        $products=DB::table('products')
+                    ->where('name','LIKE',$request->name.'%')
+                    ->paginate(9);
+        return view('products')->with('products',$products);
+    }
 }
