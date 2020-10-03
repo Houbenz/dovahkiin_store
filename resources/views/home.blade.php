@@ -15,22 +15,21 @@
 @endauth
 
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-            <h3 class="text-center"><strong class="text-dark">Dovahkiin</strong>
+
+                <h3 class="text-center"><strong class="text-dark">Dovahkiin</strong>
                 <strong class="text-danger">Store</strong> </h3>
 
             </div>
             <div class="col-md-1"></div>
-            </div>
-    </div>
-
-
+        </div>
         <div class="row">
 
-            <div class="col-lg-auto">
+            <div class="col-2"></div>
+            <div class="col-8">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -64,6 +63,8 @@
                     </a>
                   </div>
             </div>
+
+            <div class="col-2"></div>
 
          </div>
     </div>

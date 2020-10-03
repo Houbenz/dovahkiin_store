@@ -25,7 +25,7 @@
         @include('inc.navbar')
 
         <!--Here where the content changes, others are all static-->
-        <div id="app"class="container pt-3">
+        <div id="app"class="container-fluid pt-3">
 
             @yield('content')
 

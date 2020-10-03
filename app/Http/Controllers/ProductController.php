@@ -8,6 +8,14 @@ use App\Product;
 
 class ProductController extends Controller
 {
+
+
+
+    /**
+     * return an array with the count of products
+     */
+
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +23,13 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         $products=Product::paginate(9);
-        return view('inc.products.products',['products'=>$products]);
+        $counts=$this->countElements();
+        return view('inc.products.products',[
+            'products'=>$products,
+            'counts' => $counts
+        ]);
 
     }
 
@@ -50,7 +63,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view("inc.products.product_detail")->with('product',$product);
+        return view("inc.products.product_detail")->with('product',$product)->with('counts',$this->countElements());
     }
 
     /**
@@ -88,11 +101,60 @@ class ProductController extends Controller
     }
 
 
-    public function search(Request $request)
+    public  function search(Request $request)
     {
         $products=DB::table('products')
                     ->where('name','LIKE',$request->name.'%')
                     ->paginate(9);
-        return view('products')->with('products',$products);
+        return view('inc.products.products',[
+            'products'=>$products,
+            'counts'=>$this->countElements()
+        ]);
+    }
+
+    public function searchType(Request $request)
+    {
+
+
+        $products = Product::where('type',$request->type)->paginate(9);
+        $products->withPath('?type='.$request->type);
+    return view('inc.products.products')->with('products',$products);
+
+    }
+
+    public static function countElements(){
+        $products=Product::all();
+        $count=count($products);
+        $countPc=0;
+        $countPs=0;
+        $countXbox=0;
+
+        for ($i=0; $i < $count; $i++) {
+           switch ($products[$i]->type) {
+                case 'pc':
+                    $countPc++;
+                break;
+
+                case 'xbox':
+                    $countXbox++;
+                break;
+
+                case 'ps':
+                    $countPs++;
+                break;
+
+               default:
+                   # code...
+                   break;
+           }
+        }
+
+        $counts=[
+            "count" => $count,
+            "countPc" => $countPc,
+            "countPs" => $countPs,
+            "countXbox" => $countXbox
+             ];
+           return $counts;
     }
 }

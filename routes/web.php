@@ -13,6 +13,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ProductController;
 
 
 Route::get('users','UserController@getUsers');
@@ -37,3 +38,7 @@ Route::post('login',[LoginController::class,'authenticate']);
 Route::post('register',[RegisterController::class,'create']);
 
 Route::post('logout',[LoginController::class,'logout']);
+
+Route::get('type',[ProductController::class,'searchType']);
+
+Route::view('test', 'testvue');
