@@ -4,4 +4,10 @@
  * application frontend using useful Laravel and JavaScript libraries.
  */
 
+const axios = require('axios');
+
 require('./bootstrap');
+
+
+
+

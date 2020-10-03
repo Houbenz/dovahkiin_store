@@ -41,4 +41,7 @@ Route::post('logout',[LoginController::class,'logout']);
 
 Route::get('type',[ProductController::class,'searchType']);
 
-Route::view('test', 'testvue');
+Route::view('test', 'cart_element');
+Route::view('cart','cart');
+
+Route::post('oneProduct',[ProductController::class,'oneProduct']);

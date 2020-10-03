@@ -122,6 +122,14 @@ class ProductController extends Controller
 
     }
 
+
+    public function oneProduct(Request $request){
+
+        $product = Product::find($request->product_id);
+
+        return $product;
+    }
+
     public static function countElements(){
         $products=Product::all();
         $count=count($products);

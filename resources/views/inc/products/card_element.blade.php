@@ -8,7 +8,7 @@
             <h4 class="card-title text-left" style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;">
             {{$product->name}}</h4>
             <p class="card-text text-left">{{$product->description}}</p>
-            <a href="#" class="btn btn-success ">add to your cart</a>
+            <a href="#" class="btn btn-success " onclick="addProduct({{$product->id}})">add to your cart</a>
             <a href="products/{{$product->id}}" class="btn btn-warning">Details</a>
         </div>
     </div>

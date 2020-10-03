@@ -19335,6 +19335,8 @@ module.exports = function(module) {
  * dependencies. Then, we will be ready to develop a robust and powerful
  * application frontend using useful Laravel and JavaScript libraries.
  */
+var axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 /***/ }),
@@ -19409,3 +19411,5 @@ module.exports = __webpack_require__(/*! /home/houbenz/laravel-projects/dovahkii
 /***/ })
 
 /******/ });
+
+

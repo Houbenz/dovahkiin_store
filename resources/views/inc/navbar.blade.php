@@ -59,15 +59,27 @@
                   </div>
 
             </li>
-
-
-
         </ul>
-        <a href="#" class="nav-item mr-5">
-            <img src="/images/icons/cart.svg" width="50" height="50"
-            class="d-inline-block align-top rounded p-1" alt="">
-            <span class="badge badge-light align-top rounded p-1">0</span>
-        </a>
+
+        <div class="dropdown">
+            <a class="nav-item mr-5" role="button" href="#"
+            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                <img src="/images/icons/cart.svg" width="50" height="50"
+                class="d-inline-block align-top rounded" alt="">
+                <span id="cartSize" class="badge badge-light align-top rounded">0</span>
+            </a>
+
+            <script>
+
+            </script>
+
+            <!--Cart here-->
+            <div class="dropdown-menu p-3 " style="width: 450px !important;" aria-labelledby="dropdownMenuLink">
+                <a class="btn btn-secondary btn-block"href="#" role="button">See all</a>
+              </div>
+        </div>
+
         <form class="form-inline my-2 my-lg-0" action="{{ url('products/search') }}" method="POST">
             @csrf
             <input class="form-control mr-sm-2" name="name" type="text" placeholder="Search">
