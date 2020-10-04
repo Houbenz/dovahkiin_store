@@ -70,12 +70,18 @@
                 <span id="cartSize" class="badge badge-light align-top rounded">0</span>
             </a>
 
-            <script>
 
-            </script>
 
             <!--Cart here-->
-            <div class="dropdown-menu p-3 " style="width: 450px !important;" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu p-3 " id="app" style="width: 450px !important;" aria-labelledby="dropdownMenuLink">
+
+                    <cart-dropdown-component
+                    v-for="element in cart_products"
+                    v-bind:key="element.id"
+                    v-bind:name="element.name"
+                    v-bind:price="element.price"
+                    ></cart-dropdown-component>
+
                 <a class="btn btn-secondary btn-block"href="#" role="button">See all</a>
               </div>
         </div>
@@ -87,5 +93,3 @@
         </form>
     </div>
 </nav>
-
-

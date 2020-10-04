@@ -8,7 +8,8 @@
 
     <div class="row">
 
-        <div class="col-3 pt-5">
+        <div class="col-3" ></div>
+        <div class="col-3 pt-5 position-fixed" >
             <ul class="list-group ">
                 <li class="list-group-item bg-danger text-white">Category</li>
 
