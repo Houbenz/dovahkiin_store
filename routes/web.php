@@ -15,6 +15,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ProductController;
 
+use Illuminate\Support\Facades\Route;
 
 Route::get('users','UserController@getUsers');
 
@@ -25,7 +26,7 @@ Route::get('/',function(){
 
 
 /*PRODUCTS*/
-Route::post('products/search','ProductController@search')->name('products.search');
+Route::post('products/search',[ProductController::class,'search'])->name('products.search');
 Route::resource('products', 'ProductController');
 Route::view('test','product_detail');
 Route::view('vue','testvue');
@@ -45,3 +46,12 @@ Route::view('test', 'cart_element');
 Route::view('cart','cart');
 
 Route::post('oneProduct',[ProductController::class,'oneProduct']);
+
+/***Login admin */
+
+Route::get('loginAdmin',[LoginController::class,'showLoginFormAdmin'])->name('loginAdmin');
+Route::post('loginAdmin',[LoginController::class,'adminLogin'])->name('formAdmin');
+Route::get('/admin', function () {
+
+    return view('admin.home');
+});

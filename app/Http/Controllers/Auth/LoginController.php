@@ -39,6 +39,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest:admin')->except('logout');
     }
 
     public function authenticate(Request $request){
@@ -47,10 +48,35 @@ class LoginController extends Controller
 
         $user=Auth::user();
 
-        if(Auth::attempt($credentials)){
-            return redirect()->intended('/')->with('user',$user);
+
+        if($user != null){
+            if(Auth::attempt($credentials)){
+                return redirect()->intended('/')->with('user',$user);
+            }
         }
     }
+
+    public function showLoginFormAdmin(){
+        return view('admin.login');
+    }
+
+    public function adminLogin(Request $request){
+    
+        $this->validate($request,[
+            'email'=>'required|email',
+            'password'=>'required|min:6'
+        ]);
+        
+        $credentials = $request->only('email','password');
+
+        if(Auth::guard('admin')->attempt($credentials)){
+
+            return redirect()->route('homeAdmin')->with('admin',Auth::user());
+        }
+
+        return back()->withInput($request->only('email'));
+    }
+
 
     public function logout(){
         Auth::logout();

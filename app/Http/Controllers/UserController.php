@@ -8,16 +8,9 @@ use App\User;
 class UserController extends Controller
 {
 
-
-
-
     public function getUsers(){
 
-
-
-
         $users=array();
-
 
         for ($i=0; $i < 3; $i++) {
             $user = new User;
@@ -25,8 +18,6 @@ class UserController extends Controller
             $user->email="email".$i;
             array_push($users,$user);
         }
-
-
         return view('users')->with('users',$users);
     }
 }

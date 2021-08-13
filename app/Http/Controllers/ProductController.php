@@ -9,8 +9,6 @@ use App\Product;
 class ProductController extends Controller
 {
 
-
-
     /**
      * return an array with the count of products
      */
@@ -115,10 +113,9 @@ class ProductController extends Controller
     public function searchType(Request $request)
     {
 
-
         $products = Product::where('type',$request->type)->paginate(9);
         $products->withPath('?type='.$request->type);
-    return view('inc.products.products')->with('products',$products);
+        return view('inc.products.products')->with('products',$products);
 
     }
 

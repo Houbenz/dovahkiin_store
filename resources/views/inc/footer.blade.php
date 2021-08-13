@@ -14,10 +14,11 @@
                 <div class="bg-dark">
                     <div class="container pt-2 text center">
                         <div class="row mt-3">
-
                             <div class="col-md-3 text-white text-center">
                                 <a href="/"><strong class='text-white'>Dovahkiin</strong>
-                                    <strong class="text-danger">store</strong></a> &trade;</h5>
+                                    <strong class="text-danger">store</strong></a><strong> &trade;</strong>
+
+                                    <div><a href="{{route('loginAdmin')}}"> Admin panel</a></div>
                             </div>
                             <div class="col-md-3 text-white text-center">
                                 <h5 class="text-center text-white

@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::share('counts',ProductController::countElements());
+        //View::share('counts',ProductController::countElements());
     }
 }
