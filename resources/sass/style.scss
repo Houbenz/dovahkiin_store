@@ -1,5 +1,8 @@
 
 //sidebar navbar
+html{
+  font-family: monospace;
+}
 
 #wrapper {
     overflow-x: hidden;
@@ -44,3 +47,78 @@
   }
 }
 
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 85vh;
+}
+
+
+.form_admin{
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  flex-direction: column;
+  padding: 0 3vw 1.5vw 3vw;
+  border: 3px solid black ;
+  border-radius: 24px;
+
+}
+
+.btn_login{
+  color: white;
+  background-color: rgb(34, 32, 32);
+  padding: 1.5vh 1.5vw;
+  border-radius: 16px;
+  font-family: monospace;
+  margin: 3vh 0 0 0;
+  transition: background-color ease-in 200ms;
+}
+
+.btn_login:hover{
+  background-color: black;
+}
+
+.input_login_admin{
+  width: 100%;
+  display: inline-block;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1vw 1vw;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: background-color ease 250ms;
+}
+
+.input_login_admin:hover{
+  background-color: whitesmoke;
+}
+
+.input_login_admin:focus{
+  background-color: whitesmoke;
+}
+
+label{
+  display: block;
+  margin-bottom: 1.5vh;
+  margin-top: 1.5vh;
+}
+.login_admin_text{
+  font-size: 18px;
+}
+
+.admin_login_title{
+  font-size: 24px;
+}
+
+.admin_logo{
+  width: 10vw;
+  height: 10vw;
+  margin-top: 1.5vh;
+  margin-bottom: 3vh;
+  justify-self: start;
+}

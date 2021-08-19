@@ -54,4 +54,4 @@ Route::post('loginAdmin',[LoginController::class,'adminLogin'])->name('formAdmin
 Route::get('/admin', function () {
 
     return view('admin.home');
-});
+})->name('homeAdmin');
